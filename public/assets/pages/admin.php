@@ -66,8 +66,8 @@
                         <td><?php echo $rowj['date_of_sale']; ?></td>
                         <td><?php echo $rowj['views']; ?></td>
                         <td><?php echo $rowj['employee_eid']; ?></td>
-                        <td><a href="../includes/edit.php?id=<?php echo $rowj['id']; ?>">Edit</a></td>
-                        <td><a href="../includes/delete.php?id=<?php echo $rowj['id']; ?>">Delete</a></td>
+                        <td><a href="../includes/edit.php?cid=<?php echo $rowj['cid']; ?>">Edit</a></td>
+                        <td><a href="../includes/delete.php?cid=<?php echo $rowj['cid']; ?>">Delete</a></td>
                         <td><?php echo $rowj['description']; ?></td>
                     </tr>
                     <?php

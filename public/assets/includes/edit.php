@@ -7,9 +7,9 @@ if ($_POST['edit']) {
     $result = mysqli_query($conn, $query);
 }
 
-if ($_GET['id']) {
-    $id = $_GET['id'];
-    $query = "SELECT * FROM car WHERE id='$id'";
+if ($_GET['cid']) {
+    $cid = $_GET['cid'];
+    $query = "SELECT * FROM car WHERE id='$cid'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     $name = $row['name'];
