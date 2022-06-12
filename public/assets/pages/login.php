@@ -1,3 +1,4 @@
+<?php include '../includes/session.php';?>
 <?php include '../includes/header.php' ; ?>
 
 <main class="loginmain">
@@ -10,8 +11,13 @@
         <input type="text" name="username" placeholder="Enter Username" class="inputbox">
         <label for="password" class="loginlabel">Password</label>
         <input type="password" name="password" placeholder="Enter Password" class="inputbox">
-        <input type="submit" name="login" value="login" class="submitbutton">
+        <input type="submit" name="login" value="Login" class="submitbutton">
         <a href="register.php">Create an account</a>
+        <?php
+        if($_GET['error']){
+            echo "<script>alert('Username or password is incorrect')</script>";
+        }
+        ?>
     </form>
 </div>
 

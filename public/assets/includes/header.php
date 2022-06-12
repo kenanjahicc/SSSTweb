@@ -15,16 +15,21 @@
         <header>
             <nav>
             <a href="/" class="linkheader">HOME</a>
-            <a href="" class="linkheader">CAR OFFERS</a>
+            <a href="/assets/pages/browse.php" class="linkheader">CAR OFFERS</a>
             <a href="/#drugi" class="linkheader">OLD FOR NEW</a>
             <a href="" class="linkheader">ABOUT US</a>
             <a href="" class="linkheader">CONTACT</a>
             <a href="/assets/pages/login.php" class="linkheader
-            <?php if(isset($_SESSION))echo 'hidelogin'?>
-            ">
+            <?php if(isset($_SESSION['username']))echo 'hidelogin'?>">
                 <img src="/assets/images/login.png" alt="" class="login">
                 LOG IN
             </a>
+            <?php if(isset($_SESSION['username'])){
+            ?>
+            <a href="/assets/includes/logout.php" class="logout linkheader">
+            <?php
+            echo "LOG OUT</a>";}
+            ?>
             </nav>
 
         </header>

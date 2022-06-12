@@ -1,5 +1,5 @@
 <?php
-$conn= new mysqli("localhost","username","password","auto_db");
+$conn= new mysqli("db","root","","mydb");
 if(!$conn){
     die("Connection failed: ".mysqli_connect_error());
 }

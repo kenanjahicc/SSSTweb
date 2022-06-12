@@ -1,6 +1,6 @@
 </div>
 <footer>
-    <span>&copy Lorem, ipsum dolor.</span>
+    <span>&copy Belmir Emir Kenan</span>
 </footer>
 </body>
 </html>
