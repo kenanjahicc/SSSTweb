@@ -37,7 +37,7 @@ if ($_GET['Search']) {
     </form>
     <div class="gridpret">
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-        <a href="?klik=<?php echo $row['cid']; ?>">
+        <a href="?klik=<?php echo $row['cid']; ?> class=" nolink">
             <div class="griditem">
                 <img src="../uploads/<?php echo $row['thumbnail']; ?>" alt="" class="slikapretraga">
                 <div class="ispodslikepretraga">
