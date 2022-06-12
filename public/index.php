@@ -43,6 +43,17 @@ if ($_POST['Send'] && $_POST['subject'] && $_POST['message']) {
         </div>
     </div>
     <?php } ?>
+    <div class="prvi treci" id="aboutus">
+        <div class="naslicidrugi trecislika">
+            <h1 class="oldfornew">About us</h1>
+            <span class="oldfornewtext">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eaque architecto numquam nulla totam quas
+                repellat reprehenderit? Eaque obcaecati delectus doloribus suscipit aspernatur, corrupti voluptatum,
+                tempore labore odio architecto voluptatem dignissimos alias ipsa cum esse quisquam iure neque doloremque
+                excepturi cumque quaerat necessitatibus nostrum aut? Magni ipsam quis autem natus.
+            </span>
+        </div>
+    </div>
 </main>
 
 <?php include 'assets/includes/footer.php'; ?>

@@ -3,6 +3,19 @@ include '../includes/session.php';
 include '../includes/dbconn.php';
 include '../includes/header.php';
 
+if ($_GET['klik']) {
+    $klik = $_GET['klik'];
+    $query = "SELECT * FROM car";
+    $result = mysqli_query($conn, $query);
+    $rowk = mysqli_fetch_assoc($result);
+    if (!$rowk['views']) {
+        $query = "UPDATE car SET views=1 WHERE id = '$klik'";
+        $result = mysqli_query($conn, $query);
+    } else {
+        $query = "UPDATE car SET views = views + 1 WHERE cid = '$klik'";
+        $result = mysqli_query($conn, $query);
+    }
+}
 if ($_GET['Search']) {
     $search = $_GET['pretraga'];
     $query = "SELECT * FROM car WHERE name LIKE '%$search%' OR color LIKE '%$search%' ORDER BY views DESC";
@@ -14,6 +27,7 @@ if ($_GET['Search']) {
 ?>
 
 
+
 <main class="browse">
     <form action="" class="pretraga" method="GET">
         <div class="glpret">
@@ -22,18 +36,18 @@ if ($_GET['Search']) {
         </div>
     </form>
     <div class="gridpret">
-        <div class="griditem">
-            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-
-            <img src="../uploads/<?php echo $row['thumbnail']; ?>" alt="" class="slikapretraga">
-            <div class="ispodslikepretraga">
-                <h3 class="imeauta"><?php echo $row['name']; ?></h3>
-                <span class="italic">Year of production: <?php echo $row['date_of_production']; ?></span></br>
-                <span class="italic">State: <?php echo $row['old_new']; ?></span>
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+        <a href="?klik=<?php echo $row['cid']; ?>">
+            <div class="griditem">
+                <img src="../uploads/<?php echo $row['thumbnail']; ?>" alt="" class="slikapretraga">
+                <div class="ispodslikepretraga">
+                    <h3 class="imeauta"><?php echo $row['name']; ?></h3>
+                    <span class="italic">Year of production: <?php echo $row['date_of_production']; ?></span></br>
+                    <span class="italic">State: <?php echo $row['old_new']; ?></span>
+                </div>
             </div>
-
-            <?php } ?>
-        </div>
+        </a>
+        <?php } ?>
     </div>
 
 </main>

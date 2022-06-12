@@ -39,13 +39,22 @@ body {
 }
 
 /*Header Start*/
-
+.hamburger{
+    display: none;
+}
 header{
     background-color: rgb(53, 53, 53);
     padding-top:20px;
     padding-bottom: 20px;
     width: 100%;
     height: 75px;
+}
+#topNav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap:100px;
 }
 nav{
     margin-left: auto;
@@ -117,7 +126,18 @@ footer>span{
     margin-top:100px;
     height: 500px;
 }
-
+.naslicidrugi{
+    width: 70%;
+}
+.trecislika{
+    margin-bottom:0;
+    margin-top: 20%;
+    height: 500px;
+    width: 70%;
+}
+.treci{
+    background-image: url('../images/main3.webp') !important;
+}
 @keyframes zaLogo{
     to{
         transform: scale(1.05);
@@ -233,9 +253,16 @@ main.browse{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    gap:30px;
+}
+.griditem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: span 1;
 }
 .slikapretraga{
-    width: 100%;
+    max-width: 100%;
 }
 .pretraga input[type="text"]{
     width: 300px;
@@ -311,4 +338,72 @@ form{
     justify-content: center;
     width: fit-content;
     height: fit-content;
+}
+
+
+
+@media screen and (max-width: 1000px){
+    .wrap{
+        width: 100%;
+    }
+    nav{
+        gap:10px;
+        flex-direction: column;
+    }
+    header{
+        padding-top:10px;
+        padding-bottom: 10px;
+        width: 100%;
+        height:fit-content;
+    }
+    #topNav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+        display: none;
+    }
+    .hamburger{
+        font-weight: bold;
+        align-self: flex-end;
+        margin-right: 20px;
+        text-decoration: none;
+        color: black;
+        font-size: large;
+        padding:5px;
+        border-radius: 5px;
+        background-color: #FFF;
+        display: unset !important;
+    }
+    .naslicidrugi{
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+    }
+    .contact{
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+    }
+    .browse{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .pretraga{
+        align-self: center;
+        font-size: 0.6em;
+    }
+    .pretraga input[type="text"]{
+        width: 49%;
+    }
+    .pretraga input[type="submit"]{
+        width:49%
+    }
+    main.browse{
+        width: 100%;
+    }
 }
